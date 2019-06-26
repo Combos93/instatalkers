@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
   end
 
   def show;
-    @users = User.all.per 10
+    @users = User.all
   end
 
   def create

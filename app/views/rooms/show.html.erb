@@ -9,7 +9,7 @@
     <li>
       <%= user.nickname %>
       <% if user.online %>
-        <%= image_tag "green_dot.png", id: "#{user._id}-status", class: "active" %>
+        <%= image_tag "green_dot.png", id: "#{user.id}-status", class: "active" %>
       <% else %>
         <%= image_tag "red_dot.png", id: "#{user.id}-status", class: "inactive" %>
       <% end %>
