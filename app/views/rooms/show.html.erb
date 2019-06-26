@@ -4,6 +4,19 @@
 
 <p id="notice"><%= notice %></p>
 
+<ul id="users-list">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.nickname %>
+      <% if user.online %>
+        <%= image_tag "green_dot.png", id: "#{user._id}-status", class: "active" %>
+      <% else %>
+        <%= image_tag "red_dot.png", id: "#{user.id}-status", class: "inactive" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
 <div class="messages">
   <div class="messages-inner" id="messages" data-room-id="<%= @room.id %>">
     <%= render @room.messages %>

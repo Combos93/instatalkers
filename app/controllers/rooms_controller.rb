@@ -6,7 +6,9 @@ class RoomsController < ApplicationController
     @room = Room.new
   end
 
-  def show; end
+  def show;
+    @users = User.all.per 10
+  end
 
   def create
     @room = Room.create!
