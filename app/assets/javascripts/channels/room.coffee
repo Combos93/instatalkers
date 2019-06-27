@@ -27,6 +27,8 @@ createRoomChannel = (roomId) ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
+      user = $(".user-#{data['user_id']}")
+      user.toggleClass 'online', data['online']
       console.log('Received message: ' + data['message'])
       $('#messages').append data['message']
       scroll_bottom()
