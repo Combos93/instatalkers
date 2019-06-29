@@ -1,7 +1,13 @@
 class User < ApplicationRecord
   before_create :generate_nickname
 
-  after_update_commit { RoomBroadcastJob.perform_later self }
+  scope :online, -> { where(online: true) }
+
+#  after_update_commit { RoomBroadcastJob.perform_later self }
+
+  def as_json
+    { nickname: nickname, online: online }
+  end
 
   private
 
