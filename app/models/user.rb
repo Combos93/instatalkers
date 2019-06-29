@@ -9,6 +9,10 @@ class User < ApplicationRecord
     { nickname: nickname, online: online }
   end
 
+  def online?
+    !Redis.new.get("user_#{self.id}_online").nil?
+  end
+
   private
 
   def generate_nickname

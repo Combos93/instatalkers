@@ -1,5 +1,7 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
+    redis.set("user_#{current_user.id}_online", "1")
+
     logger.info "Subscribed to RoomChannel, roomId: #{params[:roomId]}"
 
     user = User.where(id: current_user.id).first
@@ -14,6 +16,8 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
+    redis.del("user_#{current_user.id}_online")
+
     logger.info "Unsubscribed to RoomChannel"
 
     user = User.where(id: current_user.id).first
@@ -27,5 +31,11 @@ class RoomChannel < ApplicationCable::Channel
     logger.info "RoomChannel, speak: #{data.inspect}"
 
     MessageService.new(body: data['message'], user: current_user, room: @room).perform
+  end
+
+  private
+
+  def redis
+    Redis.new 
   end
 end

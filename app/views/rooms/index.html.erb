@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Rooms</h1>
+<div class="online">
+  <ul>
+    <% @users.each do |user| %>
+      <li class="pure">
+        <%= user.nickname %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <div class="js-online-users text-success online"></div>
 

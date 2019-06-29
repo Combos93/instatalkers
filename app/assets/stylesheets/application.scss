@@ -17,3 +17,24 @@
   list-style-type: none;
 }
 
+.online {
+  display: block;
+  border: 2px solid green;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  text-align: center;
+  color: green;
+}
+
+.pure {
+  list-style-type: none;
+}
+
+.online_status {
+  color: red;
+  transition: color 1s ease;
+  &.online {
+    color: green;
+  }
+}
