@@ -2,7 +2,20 @@
 @import 'messages';
 
 .active { display: inline-block; }
-.inactive { display: none;}
+.inactive { display: inline-block;}
+
+.online {
+  display: block;
+  border: 2px solid green;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.pure {
+  list-style-type: none;
+}
 
 .online {
   display: block;
