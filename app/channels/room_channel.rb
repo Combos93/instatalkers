@@ -12,7 +12,6 @@ class RoomChannel < ApplicationCable::Channel
     @room = Room.find(params[:roomId])
 
     stream_from "room_channel_#{@room.id}"
-
   end
 
   def unsubscribed
@@ -25,6 +24,7 @@ class RoomChannel < ApplicationCable::Channel
     user.online = false
     user.save!
 
+    stream_from "room_channel_#{@room.id}"
   end
 
   def speak(data)

@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
+
 gem 'redis'
 
 gem 'jquery-rails'
@@ -29,6 +30,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
