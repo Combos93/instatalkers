@@ -8,11 +8,11 @@ class StatusChannel < ApplicationCable::Channel
 
   def unsubscribed
     stop_all_streams
-    #current_user.update_attribute(:online, false)
-    #stream_from("status_channel")
+    current_user.update_attribute(:online, false)
+    stream_from("status_channel")
 
-    #ActionCable.server.broadcast "status_channel",
-    #                             users: User.offline.as_json
+    ActionCable.server.broadcast "status_channel",
+                                 users: User.offline.as_json
   end
 
   private
