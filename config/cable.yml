@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: async
-  url: redis://redistogo:10d91696edc128925e0aba79dd73a1e9@pearlfish.redistogo.com:9832/
+  url: redis://redistogo:dde16f59753c2ff5dcd2680b2c517dff@porgy.redistogo.com:11469/
   channel_prefix: instatalk_production
