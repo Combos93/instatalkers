@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Rooms</h1>
-<div class="js-online-users text-success online"></div>
+<div class="js-online-users text-success online">
+  Online: <% @users.map do |user| %>
+    <%= user.nickname %>
+<% end %>
+</div>
 
 <ul class="mt-4 list-unstyled">
   <%= render @rooms %>
