@@ -23,8 +23,6 @@ class RoomChannel < ApplicationCable::Channel
     return unless user
     user.online = false
     user.save!
-
-    stream_from "room_channel_#{@room.id}"
   end
 
   def speak(data)
