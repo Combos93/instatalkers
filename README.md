@@ -1,24 +1,36 @@
-# README
+### Приложение "Instatalkers"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+---
 
-Things you may want to cover:
+**Учебный проект-приложение**
 
-* Ruby version
+Проект-приложение реализовано на `Ruby/Rails (v. 5.2.3)` в учебных целях.
 
-* System dependencies
+**Краткое описание**
 
-* Configuration
+Приложение `Instatalkers` - реализация приватных чат-комнат для общения. При открытии приложения, будет сгенерирован случайный никнейм, который будет храниться в куках браузера. Это упрощает аутентификацию пользователей.
 
-* Database creation
+**Использованные технологии:**
 
-* Database initialization
+* Оформление с помощью `Bootstrap 4`
 
-* How to run the test suite
+* Использование No-SQL базы данных `Redis`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Использование возможностей Rails и технологии WebSocket: `Action Cable` для реализации непрерывного потока данных в приложение
 
-* Deployment instructions
+**Установка и запуск приложения**
 
-* ...
+* Необходимо установить локально `Redis`
+
+* Выполнить установку всех библиотек и подготовить базу данных(используется БД Postgres) - файл `database.yml` в папке 'config'.
+
+```
+bundle install
+bundle exec rake db:setup && bundle exec rake db:migrate
+```
+
+Для запуска локального сервера нужно выполнить команду:
+
+```
+bundle exec rails s
+```
